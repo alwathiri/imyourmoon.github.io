@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقعي الخاص</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .login-box {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 90%;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 25px;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box" id="loginBox">
+    <h2>أدخل كلمة المرور للدخول</h2>
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <br>
+    <button onclick="checkPassword()">دخول</button>
+    <p id="error" style="color: red;"></p>
+  </div>
+
+  <div class="content" id="mainContent">
+    <h1>مرحباً بك 🌙</h1>
+    <p>هذا هو موقعي الشخصي الآمن.</p>
+  </div>
+
+  <script>
+    const correctPassword = "4star"; // 
+
+    function checkPassword() {
+      const entered = document.getElementById('password').value;
+      if (entered === correctPassword) {
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+      } else {
+        document.getElementById('error').textContent = "كلمة المرور غير صحيحة!";
+      }
+    }
+  </script>
+
+</body>
+</html>
